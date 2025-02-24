@@ -1,6 +1,6 @@
-# ![Project Logo](https://raw.githubusercontent.com/yourusername/repository/main/assets/logo.svg) Bubble Volume Market Charts
+# ![Project Logo](https://raw.githubusercontent.com/landofcash/bubble-volume-market-charts/main/src/assets/logo.svg) Bubble Volume Market Charts
 
-> **Built in just 3 days** as a **proof of concept** and **technology test** for integrating **Binance API & WebSockets** with a high-performance **Vue 3** frontend.
+> A **proof of concept** and **technology test** for integrating **Binance API & WebSockets** with a high-performance **Vue 3** frontend.
 
 ![Vue](https://img.shields.io/badge/Vue.js-3.x-4FC08D?logo=vue.js&logoColor=white)
 ![Vite](https://img.shields.io/badge/Vite-4.x-blueviolet?logo=vite&logoColor=white)
@@ -20,7 +20,7 @@ This project is a **real-time cryptocurrency trading dashboard** featuring:
 - 🚀 **Ultra-fast performance** with **Vite** & **Vue 3**.
 - 🛠️ **Efficient state management** using **Pinia**.
 
-![App Screenshot](https://via.placeholder.com/800x400?text=Project+Screenshot)
+![App Screenshot](https://i.gyazo.com/cc83a11ceb918dc2672f6318e94b14cc.png)
 
 ---
 
