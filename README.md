@@ -12,8 +12,10 @@
 ---
 
 ##  **[🌐 Click To Try It 👀](https://landofcash.github.io/bubble-volume-market-charts/)**
+[https://landofcash.github.io/bubble-volume-market-charts](https://landofcash.github.io/bubble-volume-market-charts)
 
 ---
+
 ## 🔥 Overview
 
 This project is a **real-time cryptocurrency trading dashboard** featuring:
