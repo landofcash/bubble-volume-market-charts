@@ -11,6 +11,9 @@
 
 ---
 
+##  **[🌐 Click To Try It 👀](https://your-demo-link.com)**
+
+---
 ## 🔥 Overview
 
 This project is a **real-time cryptocurrency trading dashboard** featuring:
@@ -72,16 +75,11 @@ cd crypto-trading-dashboard
 ```sh
 npm install
 ```
-### **3️⃣ Run the development server
+### **3️⃣ Run the development server**
 ```sh
 npm run dev
 ```
 Open http://localhost:5173 in your browser.
-
----
-
-## 🌐 Live Demo
-🚀 **[View Live Demo](https://your-demo-link.com)**
 
 ---
 
