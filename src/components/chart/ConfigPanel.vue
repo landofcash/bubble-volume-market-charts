@@ -14,8 +14,8 @@ const switchSymbol = (symbol) => {
 </script>
 
 <template>
-  <div class="flex flex-col p-4 mb-4 bg-white shadow-md rounded">
-    <h2 class="text-sm font-bold text-gray-700 text-center mb-2">Select Symbol</h2>
+  <div class="flex flex-col p-4 mb-4 bg-white dark:bg-gray-700 shadow-md rounded">
+    <h2 class="text-sm font-bold text-gray-700 dark:text-gray-100 text-center mb-2">Select Symbol</h2>
     <div class="grid grid-cols-2 gap-2">
       <button v-for="symbol in binancePairs" :key="symbol"
               @click="switchSymbol(symbol)"

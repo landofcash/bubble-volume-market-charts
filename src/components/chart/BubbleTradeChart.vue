@@ -77,9 +77,10 @@ onUnmounted(() => {
 </script>
 
 <template>
-  <div class="w-full max-w-4xl mx-auto relative">
+  <div class="w-full max-w-4xl mx-auto relative bg-white dark:bg-gray-700 p-4 rounded">
     <!-- Loading Overlay -->
-    <div v-if="isLoading" class="absolute inset-0 flex flex-col items-center justify-center bg-white bg-opacity-80 z-10">
+    <div v-if="isLoading" class="absolute inset-0 flex flex-col items-center justify-center
+     bg-gray-100 dark:bg-gray-700 bg-opacity-80 z-10">
       <div class="text-lg font-semibold text-gray-700 mb-2">Loading data...</div>
 
       <!-- Log Messages -->

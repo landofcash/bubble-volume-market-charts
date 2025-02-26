@@ -5,10 +5,11 @@ const tradesStore = useTradesStore()
 </script>
 
 <template>
-  <div class="flex flex-col flex-1 p-4 bg-white shadow-md rounded">
-    <h2 class="text-sm font-bold text-gray-700 text-center mb-2">Recent Trades</h2>
+  <div class="flex flex-col flex-1 p-4 bg-white dark:bg-gray-700 shadow-md rounded">
+    <h2 class="text-sm font-bold text-gray-700 dark:text-gray-100 text-center mb-2">Recent Trades</h2>
     <!-- Table Header -->
-    <div class="flex justify-between px-2 py-1 bg-gray-200 text-xs font-semibold text-gray-600 rounded">
+    <div class="flex justify-between px-2 py-1 bg-gray-200
+    dark:bg-gray-800 text-xs font-semibold text-gray-600 dark:text-gray-400 rounded">
       <span class="w-1/3 text-left">Price</span>
       <span class="w-1/3 text-center">Volume</span>
       <span class="w-1/3 pr-8 text-right">Time</span>
