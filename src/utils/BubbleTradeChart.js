@@ -157,6 +157,7 @@ export default class BubbleTradeChart {
       h:price,
       l:price,
       c:price,
+      q:volume,
     }
     const lastTrade = side === 'Buy' ? this.lastBuy : this.lastSell
     const history = side === 'Buy' ? this.buyHistory : this.sellHistory
@@ -166,15 +167,21 @@ export default class BubbleTradeChart {
       lastTrade.q += volume
       lastTrade.orders += 1
       lastTrade.r = this.getRadius(lastTrade.q)
+    } else {
+      if (lastTrade) history.push(lastTrade)
+      side === 'Buy' ? (this.lastBuy = newTrade) : (this.lastSell = newTrade)
+    }
+
+    if(this.lastOHLC?.x===time){
       this.lastOHLC.h=this.lastOHLC.h>price?this.lastOHLC.h:price
       this.lastOHLC.l=this.lastOHLC.l<price?this.lastOHLC.l:price
       this.lastOHLC.c=price
-    } else {
-      if (lastTrade) history.push(lastTrade)
+      this.lastOHLC.q += volume
+    } else{
       if (this.lastOHLC) this.ohlc.push(this.lastOHLC)
-      side === 'Buy' ? (this.lastBuy = newTrade) : (this.lastSell = newTrade)
       this.lastOHLC = newOHLC;
     }
+
     if (history.length > this.config.historyHours * 60) history.shift()
     this.tradeChart.data.datasets[0].data = [...this.buyHistory, this.lastBuy].filter(Boolean)
     this.tradeChart.data.datasets[1].data = [...this.sellHistory, this.lastSell].filter(Boolean)
