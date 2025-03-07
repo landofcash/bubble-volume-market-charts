@@ -2,6 +2,7 @@
 import { onMounted, onUnmounted, ref, watch } from 'vue'
 import { useTradesStore } from '@/stores/tradesStore.js'
 import BubbleTradeChart from '@/utils/BubbleTradeChart.js'
+import LoadingOverlay from '@/components/chart/LoadingOverlay.vue'
 
 let chartInstance = null
 const chartContainer = ref(null)
@@ -17,7 +18,9 @@ const config = {
   historicTradesLimit: 100,
   colors: {
     buy: { fill: "rgba(0, 255, 0, 0.5)", border: "rgba(0, 100, 0, 1)" },
-    sell: { fill: "rgba(255, 0, 0, 0.5)", border: "rgba(100, 0, 0, 1)" }
+    sell: { fill: "rgba(255, 0, 0, 0.5)", border: "rgba(100, 0, 0, 1)" },
+    buyCandle: { fill: "rgba(0, 255, 0, 0.3)", border: "rgba(0, 100, 0, 0.5)" },
+    sellCandle: { fill: "rgba(255, 0, 0, 0.3)", border: "rgba(100, 0, 0, 0.5)" }
   }
 }
 
@@ -78,28 +81,7 @@ onUnmounted(() => {
 
 <template>
   <div class="w-full max-w-4xl mx-auto relative bg-white dark:bg-gray-700 p-4 rounded">
-    <!-- Loading Overlay -->
-    <div v-if="isLoading" class="absolute inset-0 flex flex-col items-center justify-center
-     bg-gray-100 dark:bg-gray-700 bg-opacity-80 z-10">
-      <div class="text-lg font-semibold text-gray-700 mb-2">Loading data...</div>
-
-      <!-- Log Messages -->
-      <div class="w-3/4 max-h-40 overflow-auto text-xs text-gray-700 bg-gray-100 p-2 rounded shadow">
-        <ul>
-          <li v-for="(log, index) in logMessages" :key="index"
-              :class="{
-                'text-red-500': log.level === 'error',
-                'text-yellow-500': log.level === 'warning',
-                'text-gray-500': log.level === 'info',
-                'text-gray-500': log.level === 'debug',
-                'text-gray-500': log.level === 'trace',
-              }">
-            [{{ log.timestamp }}] {{ log.message }}
-          </li>
-        </ul>
-      </div>
-    </div>
-
+    <LoadingOverlay :isLoading="isLoading" :logMessages="logMessages" />
     <canvas ref="chartContainer"></canvas>
   </div>
 </template>
